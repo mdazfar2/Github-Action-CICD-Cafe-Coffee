@@ -19,5 +19,5 @@ RUN npm run build
 # Expose port 3000 (the port your Node.js app runs on)
 EXPOSE 3000
 
-# Start the Node.js app
+# Start the Node.js app-
 CMD ["npm", "start"]
