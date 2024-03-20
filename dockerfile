@@ -4,20 +4,17 @@ FROM node:16
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
-# Install dependencies
+# Install app dependencies
 RUN npm install
 
-# Copy the entire React app source code to the container
+# Copy the rest of your application code to the working directory
 COPY . .
 
-# Build the React app
-RUN npm run build
-
-# Expose port 3000 (the port your Node.js app runs on)
+# Expose a port to communicate with the React app
 EXPOSE 3000
 
-# Start the Node.js app-
-CMD ["npm", "start"]
+# Start your React app
+CMD ["npm", "run", "dev"]
